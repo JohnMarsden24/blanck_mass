@@ -1,0 +1,21 @@
+.caslon {
+  font-family: 'Libre Caslon Text', serif;
+}
+
+.w {
+  color: white;
+}
+
+.tac {
+  text-align: center;
+}
+
+.no-d {
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    color: $pink;
+    text-decoration: none;
+  }
+}
