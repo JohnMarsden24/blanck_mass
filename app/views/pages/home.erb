@@ -1,17 +1,22 @@
 <%= render "shared/navbar" %>
 <div class="black-con-full-height">
 
-<% @posts.each do |post| %>
-<%= post.title.html_safe %>
-<%= post.content.html_safe %>
-<% end %>
+  <% if user_signed_in? && current_user.admin %>
+    <%= render "shared/admin_navbar" %>
+  <% end %>
 
+  <div class="container">
+    <% @posts.each do |post| %>
+      <%= post.title.html_safe %>
+      <%= post.content.html_safe %>
+      <%= post.time %>
+      <% if user_signed_in? && current_user.admin %>
+        <%= link_to "Edit", edit_post_path(post) %>
+        <%= link_to "Delete", post_path(post), method: :delete %>
+      <% end %>
+    <% end %>
 
-<%= simple_form_for(@post) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content, input_html: { id: "my-form"} %>
-  <%= f.button :submit, class: "btn-full-width"%>
-<% end %>
+  </div>
 
 </div>
 
