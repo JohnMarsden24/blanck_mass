@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    @post = Post.new
-    @posts = Post.all
+    @posts = Post.all.sort
   end
 end
