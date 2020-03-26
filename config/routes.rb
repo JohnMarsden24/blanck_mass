@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get "/home", to: "pages#home"
 
+  resources :posts
+
   devise_for :users, skip: [:sessions, :registrations, :passwords]
   as :user do
     get 'admin_login', to: 'devise/sessions#new', as: :new_user_session
