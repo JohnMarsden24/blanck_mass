@@ -8,13 +8,19 @@
     color: white !important;
   }
 
-  // img {
-  //   width: 100%;
-  // }
+  img {
+    width: 100%    !important;
+    height: auto   !important;
+  }
 
-  // iframe {
-  //   width: 100%;
-  // }
+  iframe {
+    width: 100%    !important;
+    height: auto   !important;
+  }
+
+  div {
+    text-align: center;
+  }
 }
 
 .bottom-border {
@@ -25,4 +31,9 @@
   padding-bottom: 32px;
 }
 
+@media(max-width: 600px) {
+  .post {
+    width: 90%;
+  }
+}
 
