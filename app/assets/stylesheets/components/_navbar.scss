@@ -1,7 +1,7 @@
 .nav {
   // display: grid;
   // grid-template-columns: 2fr 10fr
-  background: imgae-url("navbar");
+  background: url("navbar");
   background-size: cover;
   background-position: bottom;
   width: 100%;
@@ -11,7 +11,7 @@
 }
 
 .logo {
-  background: imgae-url("navbar_logo1");
+  background: url("navbar_logo1");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -22,7 +22,7 @@
   transition: .3s;
 
   &:hover {
-    background: imgae-url("navbar_logo2");
+    background: url("navbar_logo2");
     background-size: cover;
     background-position: center;
   }
