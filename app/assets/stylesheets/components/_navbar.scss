@@ -78,18 +78,19 @@
 
 .logo {
   background: url("navbar_logo1");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-  width: 64px;
+  background-repeat: no-repeat;
+  width: 104px;
   height: 15vh;
   transition: .3s;
   position: absolute;
-  left: 16px;
 
   &:hover {
     background: url("navbar_logo2");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -100,6 +101,7 @@
   margin: 0 auto;
   flex-wrap: wrap;
   height: 100%;
+  line-height: 12px;
 
   a {
     padding: 0 16px;
@@ -110,7 +112,7 @@
 
 @media(max-width: 768px) {
   .links {
-    padding-left: 72px;
+    padding-left: 96px;
   }
 }
 
