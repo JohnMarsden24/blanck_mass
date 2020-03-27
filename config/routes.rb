@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'shows/new'
+  get 'shows/create'
+  get 'shows/update'
+  get 'shows/edit'
+  get 'shows/destroy'
   root to: "pages#landing"
 
   get "/home", to: "pages#home"
