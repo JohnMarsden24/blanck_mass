@@ -23,6 +23,8 @@ require("@rails/actiontext")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
+import { initStickyNavbarOnScroll } from '../components/stickyNavbar';
 
 document.addEventListener('turbolinks:load', () => {
+  initStickyNavbarOnScroll();
 });
