@@ -1,6 +1,5 @@
 <div class="nav bottom-border">
   <div class="logo">
-
   </div>
   <div class="links">
     <a href="" class="w caslon no-d">NEWS</a>
@@ -9,8 +8,8 @@
     <a href="" class="w caslon no-d">VIDEO</a>
     <a href="" class="w caslon no-d">BUY</a>
     <a href="" class="w caslon no-d">CONTACT</a>
-  </div>
-  <div class="blank">
-
+    <% if user_signed_in? && current_user.admin %>
+      <%= link_to "ADMIN", admin_path, class: "w caslon no-d" %>
+    <% end %>
   </div>
 </div>
