@@ -1,5 +1,9 @@
 // p = padding / m = margin / s = square / r = recentangle / t = top / r = right / b = bottom / l = left / 1-4 in 8px intervals /
 
+.center {
+  margin: 0 auto;
+}
+
 .ps4 {
   padding: 32px;
 }
@@ -10,4 +14,12 @@
 
 .mtb3 {
   margin: 24px 0;
+}
+
+.pt12 {
+  padding-top: 300px;
+}
+
+.width-50 {
+  width: 50%;
 }

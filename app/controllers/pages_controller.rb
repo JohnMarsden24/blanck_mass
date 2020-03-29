@@ -9,5 +9,4 @@ class PagesController < ApplicationController
     @shows = Show.all.sort
   end
 
-  private
 end

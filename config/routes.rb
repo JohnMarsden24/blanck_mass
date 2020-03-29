@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#landing"
 
   get "/home", to: "pages#home"
-  # get "/admin", to: "admin#home"
+  get "/admin", to: "admin#home"
 
   resources :posts, :shows
 
-  # devise_for :users, skip: [:sessions, :registrations, :passwords]
+  devise_for :users, skip: [:sessions, :registrations, :passwords]
 
   as :user do
     get 'admin_login', to: 'devise/sessions#new'

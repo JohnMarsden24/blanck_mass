@@ -1,15 +1,11 @@
 class PostsController < ApplicationController
 
-  def new
-    @post = Post.new
-  end
-
   def create
     post = Post.new(post_params)
     if post.save
       redirect_to home_path
     else
-      render :new
+      redirect_to admin_path
     end
   end
 
@@ -22,25 +18,17 @@ class PostsController < ApplicationController
     if post.update(post_params)
       redirect_to home_path
     else
-      render :edit
+      redirect_to admin_path
     end
   end
 
   def destroy
-    dose = find_post
-    dose.destroy
+    post = find_post
+    post.destroy
     redirect_to home_path
   end
 
   private
-
-  def admin
-    if current_user.admin?
-      return
-    else
-      redirect_to home_path
-    end
-  end
 
   def find_post
     Post.find(params[:id])
