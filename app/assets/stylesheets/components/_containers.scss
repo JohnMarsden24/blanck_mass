@@ -17,6 +17,14 @@
   min-height: 100vh;
 }
 
+.max-full-height {
+  max-height: 100vh;
+}
+
+.max-width {
+  max-width: 100vw;
+}
+
 @media(max-width: 576px) {
   .grid-cont {
     grid-template-columns: 1fr;
