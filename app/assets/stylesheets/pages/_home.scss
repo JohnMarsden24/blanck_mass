@@ -1,6 +1,13 @@
+.right {
+  position: relative;
+}
+
 .shows {
-  position: sticky;
-  top: 75px;
+  // visibility: hidden;
+  position: absolute;
+  // position: sticky;
+  // top: 1px;
+  width: 100%;
 }
 
 // .sticky {

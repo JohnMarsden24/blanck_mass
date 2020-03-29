@@ -6,5 +6,7 @@ class PagesController < ApplicationController
 
   def home
     @posts = Post.all.sort
+    @shows = Show.all.sort
   end
+
 end

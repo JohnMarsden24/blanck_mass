@@ -1,7 +1,0 @@
-<h1>Add new post</h1>
-
-<%= simple_form_for(@post) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content, input_html: { id: "my-form"} %>
-  <%= f.button :submit, class: "btn-full-width"%>
-<% end %>
