@@ -2,15 +2,15 @@
   <div class="logo">
   </div>
   <div class="links">
-    <%= link_to "HOME", home_path, class: "w caslon no-d"  %>
-    <a href="" class="w caslon no-d">SHOWS</a>
-    <a href="" class="w caslon no-d">AUDIO</a>
-    <a href="" class="w caslon no-d">VIDEO</a>
-    <a href="" class="w caslon no-d">BUY</a>
-    <a href="" class="w caslon no-d">CONTACT</a>
+    <%= link_to "HOME", home_path, class: "w caslon no-d letter-spacing"  %>
+    <a href="" class="w caslon no-d letter-spacing">SHOWS</a>
+    <a href="" class="w caslon no-d letter-spacing">AUDIO</a>
+    <a href="" class="w caslon no-d letter-spacing">VIDEO</a>
+    <a href="" class="w caslon no-d letter-spacing">BUY</a>
+    <a href="" class="w caslon no-d letter-spacing">CONTACT</a>
     <% if user_signed_in? && current_user.admin %>
-      <%= link_to "ADMIN", admin_path, class: "w caslon no-d" %>
-      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "w caslon no-d" %>
+      <%= link_to "ADMIN", admin_path, class: "w caslon no-d letter-spacing" %>
+      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "w caslon no-d letter-spacing" %>
     <% end %>
   </div>
 </div>
