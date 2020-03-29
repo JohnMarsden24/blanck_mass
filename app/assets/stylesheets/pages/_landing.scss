@@ -20,6 +20,8 @@
 #enter {
   position: relative;
   letter-spacing: 16px;
+  display:inline-block;
+  text-indent: 16px;
   text-shadow: 2px 2px 2px black;
 
   &:hover {
