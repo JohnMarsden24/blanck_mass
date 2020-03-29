@@ -1,9 +1,10 @@
 .content {
   position: relative;
+  height: 100vh;
 }
 
 .hero-image {
-  height: 80vh;
+  height: 90%;
   background-image: url("full_logo_shadow");
   background-size: contain;
   background-repeat: no-repeat;
