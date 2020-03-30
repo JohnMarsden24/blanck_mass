@@ -3,16 +3,20 @@
 <div class="back-image">
 </div>
 
-  <div class="grid-cont">
-    <div class="posts">
+  <div class="past-nav width-half center">
+    <div class="posts mtb3">
       <% @posts.each do |post| %>
-        <div class="post bottom-border">
-          <h4 class="caslon tac mtb3"><%= post.title %></h4>
+        <div class="post mb4">
+          <h4 class="caslon tac ptb2"><%= post.title %></h4>
           <%= post.content.html_safe %>
-          <h6><%= post.time %></h6>
+          <p><%= post.time %></p>
           <% if user_signed_in? && current_user.admin %>
-            <%= link_to "Edit", edit_post_path(post) %>
-            <%= link_to "Delete", post_path(post), method: :delete %>
+          <div class="admin-links">
+            <p>
+              <%= link_to "✎", edit_post_path(post), class: "no-d" %>
+              <%= link_to "✖", post_path(post), method: :delete, class: "no-d" %>
+            </p>
+          </div>
           <% end %>
         </div>
       <% end %>

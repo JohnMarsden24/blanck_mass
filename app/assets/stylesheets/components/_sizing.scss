@@ -1,0 +1,88 @@
+// PADDING
+
+// p = padding / s = square / r = recentangle / t = top / r = right / b = bottom / l = left / 1-4 in 8px intervals
+
+.past-nav {
+  padding-top: 15vh;
+}
+
+.ps2 {
+  padding: 16px;
+}
+
+.ps4 {
+  padding: 32px;
+}
+
+.ptb2 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.pt12 {
+  padding-top: 300px;
+}
+
+// MARGIN
+
+// m = margin / s = square / r = recentangle / t = top / r = right / b = bottom / l = left / 1-4 in 8px intervals
+
+.mb4 {
+  margin-bottom: 32px;
+}
+
+.ml2 {
+  margin-left: 16px;
+}
+
+.ms2 {
+  margin: 16px;
+}
+
+.mt2 {
+  margin-top: 16px;
+}
+
+.mtb3 {
+  margin: 24px 0;
+}
+
+// SPACING AND WIDTH
+
+.center {
+  margin: 0 auto;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.min-full-height {
+  min-height: 100vh;
+}
+
+.max-full-height {
+  max-height: 100vh;
+}
+
+.max-width {
+  max-width: 100vw;
+}
+
+.width-half {
+  width: 50%;
+}
+
+// MEDIA QUERIES
+
+@media(max-width: 768px) {
+  .width-half {
+    width: 80%;
+  }
+}
+
+// @media(max-width: 576px) {
+//   .width-half {
+//     width: 80%;
+//   }
+// }
