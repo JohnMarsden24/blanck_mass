@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#landing"
 
   get "/home", to: "pages#home"
+  get "/shows", to: "pages#shows"
   get "/admin", to: "admin#home"
 
   resources :posts, :shows

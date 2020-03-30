@@ -1,12 +1,12 @@
 .post {
-  // width: 40vw;
+  // width: 40%;
   color: white;
   // margin: 32px 0;
   background-color: rgba(80, 80, 80, 0.5);
   // opacity: .7;
   // padding: 16px 0;
   // text-align: center;
-  border: 2px solid rgba(255, 255, 255, 1);
+  // border: 2px solid rgba(255, 255, 255, 1);
 
   h4 {
     margin: 0;
@@ -54,17 +54,11 @@
   }
 }
 
-.bottom-border {
-  border-bottom: 2px solid white;
-}
-
-.container {
-  padding-bottom: 32px;
-}
-
 @media(max-width: 576px) {
   .post {
-    // width: 90%;
+    p {
+    padding: 0 8px;
+    }
   }
 }
 

@@ -3,11 +3,17 @@
 <div class="back-image">
 </div>
 
-  <div class="past-nav width-half center">
-    <div class="posts mtb3">
+  <% if @shows.empty? %>
+    <div class="past-nav d-flex justify-content-center mt4">
+    <div class="posts">
+  <% else %>
+    <div class="past-nav d-flex justify-content-start mt4">
+      <div class="posts ml4">
+  <% end %>
+
       <% @posts.each do |post| %>
         <div class="post mb4">
-          <h4 class="caslon tac ptb2"><%= post.title %></h4>
+          <h4 class="caslon tac ps2"><%= post.title %></h4>
           <%= post.content.html_safe %>
           <p><%= post.time %></p>
           <% if user_signed_in? && current_user.admin %>
@@ -21,14 +27,21 @@
         </div>
       <% end %>
     </div>
-    <div class="right">
-      <div class="shows w">
-        <h4 class="caslon tac mtb3">UPCOMING SHOWS</h4>
-        <% @shows.each do |show| %>
-          <p><%= show.date %> / <%= show.location %> / <%= show.link %></p>
+    <% unless @shows.empty? %>
+      <div class="shows-homepage w overflow mr4">
+        <h4 class="caslon tac ptb2 no-m">UPCOMING SHOWS</h4>
+        <% @shows.each_with_index do |show, index| %>
+          <% if index == (@shows.length - 1) %>
+          <div class="d-flex justify-content-between align-items-center ptb1 mlr2">
+            <% else %>
+          <div class="d-flex justify-content-between align-items-center ptb1 mlr2 border-bottom">
+            <% end %>
+            <p class="no-pm"><%= show.display_date %> / <%= show.location %> </p>
+             <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
+          </div>
         <% end %>
       </div>
-    </div>
+      <% end %>
   </div>
 
 
