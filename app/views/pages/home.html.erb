@@ -1,12 +1,13 @@
 <%= render "shared/navbar" %>
 
 <div class="back-image">
+</div>
 
   <div class="grid-cont">
     <div class="posts">
       <% @posts.each do |post| %>
         <div class="post bottom-border">
-          <h3 class="caslon tac mtb3"><%= post.title %></h3>
+          <h4 class="caslon tac mtb3"><%= post.title %></h4>
           <%= post.content.html_safe %>
           <h6><%= post.time %></h6>
           <% if user_signed_in? && current_user.admin %>
@@ -18,13 +19,12 @@
     </div>
     <div class="right">
       <div class="shows w">
-        <h3 class="caslon tac mtb3">UPCOMING SHOWS</h3>
+        <h4 class="caslon tac mtb3">UPCOMING SHOWS</h4>
         <% @shows.each do |show| %>
           <p><%= show.date %> / <%= show.location %> / <%= show.link %></p>
         <% end %>
       </div>
     </div>
   </div>
-</div>
 
 
