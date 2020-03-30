@@ -5,6 +5,7 @@
 }
 
 .back-image {
+  width: 100%;
   min-height: 100vh;
   padding-top: 15vh;
   background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("background");
@@ -31,10 +32,6 @@
 }
 
 @media(max-width: 576px) {
-  .background-image {
-    background-attachment: scroll;
-  }
-
   .grid-cont {
     grid-template-columns: 1fr;
   }
