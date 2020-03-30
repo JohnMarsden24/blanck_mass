@@ -19,8 +19,8 @@
           <% if user_signed_in? && current_user.admin %>
           <div class="admin-links">
             <p>
-              <%= link_to "✎", edit_post_path(post), class: "no-d" %>
-              <%= link_to "✖", post_path(post), method: :delete, class: "no-d" %>
+              <%= link_to "✎", edit_post_path(post), class: "no-d w" %>
+              <%= link_to "✖", post_path(post), method: :delete, class: "no-d w" %>
             </p>
           </div>
           <% end %>
@@ -36,7 +36,12 @@
             <% else %>
           <div class="d-flex justify-content-between align-items-center ptb1 mlr2 bottom-bord-1">
             <% end %>
-            <p class="no-pm"><%= show.display_date %> / <%= show.location %> </p>
+            <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %>
+              <% if user_signed_in? && current_user.admin %>
+                <%= link_to "✎", edit_show_path(show), class: "no-d w no-pm" %>
+                <%= link_to "✖", show_path(show), method: :delete, class: "no-d w no-pm" %>
+              <% end %>
+            </p>
              <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
           </div>
         <% end %>

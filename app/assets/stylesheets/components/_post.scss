@@ -17,7 +17,7 @@
   }
 
   a {
-    color: $pink !important;
+    color: $pink;
   }
 
   span {
@@ -46,11 +46,13 @@
   font-size: 1.5rem;
 
   a {
-  color: white !important;
-  }
+  color: white;
+  transition: .3s;
 
-  p {
-    margin-bottom: 0;
+  &:hover {
+    color: $pink;
+    text-decoration: none;
+    }
   }
 }
 
