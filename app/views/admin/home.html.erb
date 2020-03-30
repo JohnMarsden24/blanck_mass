@@ -14,7 +14,10 @@
 
 <%= render "shared/navbar" %>
 
-<div class="back-image grid-cont min-full-height w">
+<div class="back-image">
+</div>
+
+<div class="grid-cont min-full-height w past-nav">
   <div class="ps4">
     <h2 class="caslon">New post</h2>
     <%= simple_form_for(@post) do |f| %>
@@ -32,7 +35,6 @@
       <%= f.button :submit, class: "btn-full-width"%>
     <% end %>
   </div>
-
 </div>
 
 
