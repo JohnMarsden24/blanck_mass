@@ -1,18 +1,25 @@
 .grid-cont {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  // padding-top: 15vh;
+  padding-top: 15vh;
 }
 
 .back-image {
-  width: 100%;
+  content:"";
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index:-1;
+  display:block;
+  // width: 100%;
   min-height: 100vh;
-  padding-top: 15vh;
   background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("background");
   background-size: 100% auto;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: 50% -10%;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
 }
 
 .min-full-height {
