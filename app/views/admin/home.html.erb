@@ -44,6 +44,13 @@
         <%= f.button :submit, class: "bm-btn"%>
       <% end %>
     </div>
+    <div class="form new-audio">
+      <h2>New audio</h2>
+      <%= simple_form_for (@audio) do |f| %>
+        <%= f.input :link %>
+        <%= f.button :submit, class: "bm-btn"%>
+      <% end %>
+    </div>
   </div>
 </div>
 

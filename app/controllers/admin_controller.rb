@@ -5,6 +5,7 @@ class AdminController < ApplicationController
     @post = Post.new
     @show = Show.new
     @video = Video.new
+    @audio = Audio.new
   end
 
   private
