@@ -3,40 +3,37 @@
 <div class="back-image">
 </div>
 
-  <% if @shows.empty? %>
-    <div class="past-nav d-flex justify-content-center mt4">
-    <div class="posts">
-  <% else %>
-    <div class="past-nav d-flex justify-content-start mt4">
-      <div class="posts ml4">
-  <% end %>
-
+<div class="page-container">
+  <div class="d-flex <%= @layout %>">
+    <div class="half-width-container">
       <% @posts.each do |post| %>
-        <div class="post mb4 pb2">
-          <h4 class="caslon tac ps2"><%= post.title %></h4>
-          <%= post.content.html_safe %>
+        <div class="post">
+          <h4 class="caslon tac no-m pb2 letter-spacing-double"><%= post.title %></h4>
+          <div class="post-content">
+            <%= post.content.html_safe %>
+          </div>
           <div class="d-flex align-items-center justify-content-between">
             <p class="no-pm"><%= post.time %></p>
             <% if user_signed_in? && current_user.admin %>
-              <div class="d-flex align-items-center prl2">
+              <div class="d-flex align-items-center">
                 <button class="edit-post admin-btn" data-id="<%= post.id %>">✎</button>
                 <%= link_to "✖", post_path(post), method: :delete, class: "admin-btn", remote: true %>
               </div>
             <% end %>
           </div>
           <% if user_signed_in? && current_user.admin %>
-              <div id="<%= dom_id(post, :inline) %>" class="mlrb2" style="display: none">
-                <%= render "posts/inline_form", post: post %>
-              </div>
-            <% end %>
+            <div id="<%= dom_id(post, :inline) %>" style="display: none">
+              <%= render "posts/inline_form", post: post %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
     <% unless @shows.empty? %>
-      <div class="shows-homepage w overflow mr4">
-        <h4 class="caslon tac ptb2 no-m">UPCOMING SHOWS</h4>
+      <div class="shows-widget w overflow mr4">
+        <h4 class="caslon tac no-m pb2 letter-spacing-double">UPCOMING SHOWS</h4>
         <% @shows.each_with_index do |show, index| %>
-          <div class="ptb1 mlr2 <%= show.border?(index, @shows.length) %>">
+          <div class="<%= show.border?(index, @shows.length) %>">
             <div class="d-flex justify-content-between align-items-center">
               <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
               <div class="d-flex align-items-center">
@@ -48,7 +45,7 @@
               </div>
             </div>
             <% if user_signed_in? && current_user.admin %>
-              <div id="<%= dom_id(show, :inline) %>" class="mlrb2" style="display: none">
+              <div id="<%= dom_id(show, :inline) %>" style="display: none">
                 <%= render "shows/inline_form", show: show  %>
               </div>
             <% end %>
@@ -57,6 +54,9 @@
       </div>
     <% end %>
   </div>
+</div>
+
+
 
 
 

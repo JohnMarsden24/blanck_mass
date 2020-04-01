@@ -1,4 +1,13 @@
-.grid-cont {
+.page-container {
+  margin-top: 15vh;
+  padding: 32px 64px;
+}
+
+.half-width-container {
+  width: 50%
+}
+
+.grid-cont-admin {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
@@ -20,8 +29,15 @@
   background-repeat: no-repeat;
 }
 
+@media(max-width: 992px) {
+  .half-width-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 @media(max-width: 576px) {
-  .grid-cont {
-    grid-template-columns: 1fr;
+  .page-container {
+    padding: 16px 16px;
   }
 }
