@@ -23,8 +23,10 @@ require("@rails/actiontext")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
-import { initStickyNavbarOnScroll } from '../components/stickyNavbar';
+import { editShowForm } from '../components/showEdit';
+import { editPostForm } from '../components/postEdit';
 
 document.addEventListener('turbolinks:load', () => {
-  initStickyNavbarOnScroll();
+  editShowForm();
+  editPostForm();
 });

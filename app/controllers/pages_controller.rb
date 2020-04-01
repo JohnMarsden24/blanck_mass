@@ -13,6 +13,9 @@ class PagesController < ApplicationController
     get_shows
   end
 
+  def test
+  end
+
   private
 
   def get_shows

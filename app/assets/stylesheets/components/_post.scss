@@ -42,19 +42,6 @@
   }
 }
 
-.admin-links {
-  font-size: 1.5rem;
-
-  a {
-  color: white;
-  transition: .3s;
-
-  &:hover {
-    color: $pink;
-    text-decoration: none;
-    }
-  }
-}
 
 @media(max-width: 576px) {
   .post {

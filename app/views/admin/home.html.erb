@@ -20,7 +20,7 @@
 <div class="grid-cont min-full-height w past-nav">
   <div class="ps4">
     <h2 class="caslon">New post</h2>
-    <%= simple_form_for(@post) do |f| %>
+    <%= simple_form_for @post, class: "hello" do |f| %>
       <%= f.input :title %>
       <%= f.input :content, input_html: { id: "my-form", rows:"15"} %>
       <%= f.button :submit, class: "btn-full-width"%>
@@ -28,7 +28,7 @@
   </div>
   <div class="ps4">
     <h2 class="caslon">New show</h2>
-    <%= simple_form_for(@show) do |f| %>
+    <%= simple_form_for (@show) do |f| %>
       <%= f.input :date %>
       <%= f.input :location %>
       <%= f.input :link %>
