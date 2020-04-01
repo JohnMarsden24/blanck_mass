@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :landing, :home, :shows, :videos ]
+  skip_before_action :authenticate_user!, only: [ :landing, :home, :shows, :videos, :music ]
 
   def landing
   end
@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     @posts = Post.all.sort
     @shows = get_shows
     @layout = shows_empty(@shows)
+  end
+
+  def music
+    @audio = Audio.all
   end
 
   def shows
