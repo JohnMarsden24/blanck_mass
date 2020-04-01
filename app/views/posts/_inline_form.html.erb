@@ -12,16 +12,9 @@
   });
 </script>
 
-<%= render "shared/navbar" %>
-
-<div class="back-image">
-</div>
-
-<div class="past-nav">
-  <div class="ps4 w">
     <h1>Edit post</h1>
 
-    <%= simple_form_for(@post) do |f| %>
+    <%= simple_form_for @post, input_html: { id: dom_id(@post, 'inline_form') } do |f| %>
       <%= f.input :title %>
       <%= f.input :content, input_html: { id: "my-form", rows:"15"} %>
       <%= f.button :submit, class: "btn-full-width"%>

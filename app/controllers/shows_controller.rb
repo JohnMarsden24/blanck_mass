@@ -15,7 +15,7 @@ class ShowsController < ApplicationController
 
   def update
     show = find_show
-    if shoq.update(show_params)
+    if show.update(show_params)
       redirect_to home_path
     else
       redirect_to admin_path

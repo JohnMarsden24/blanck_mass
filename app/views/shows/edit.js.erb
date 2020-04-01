@@ -1,0 +1,15 @@
+document.getElementById('<%= dom_id(@show) %>').insertAdjacentHTML('afterend', "<%= j render 'inline_form' %>");
+
+let button = document.getElementById('cancel_<%= dom_id(@show) %>');
+
+const hideForm = () => {
+  let form = document.getElementById('inline_<%= dom_id(@show) %>');
+  if (form.offsetParent === null) {
+    form.parentNode.removeChild(form);
+} else {
+  form.classLit.add("hello");
+  }
+}
+
+button.addEventListener("click", hideForm);
+

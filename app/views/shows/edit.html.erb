@@ -1,18 +1,6 @@
-<%= render "shared/navbar" %>
-
-<div class="back-image">
-</div>
-
-<div class="past-nav">
-  <div class="ps4 w">
-    <h1>Edit show</h1>
-
-    <%= simple_form_for(@show) do |f| %>
+ <%= simple_form_for @show, input_html: { id: dom_id(@show, 'inline_form') } do |f| %>
       <%= f.input :date %>
       <%= f.input :location %>
       <%= f.input :link %>
       <%= f.button :submit, class: "btn-full-width"%>
-    <% end %>
-  </div>
-</div>
-
+<% end %>
