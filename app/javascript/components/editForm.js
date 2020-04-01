@@ -7,20 +7,21 @@ const existChecker = (form) => {
 };
 
 
-const showEditForm = (event) => {
+const showForm = (event) => {
   const id = event.currentTarget.dataset.id;
-  const form = document.getElementById(`inline_show_${id}`);
+  const elem = event.currentTarget.dataset.type;
+  const form = document.getElementById(`inline_${elem}_${id}`);
   existChecker(form);
 }
 
 const addListeners = () => {
-  document.querySelectorAll('.edit-show').forEach(show => {
-  show.addEventListener('click', showEditForm)
+  document.querySelectorAll('.edit').forEach(show => {
+  show.addEventListener('click', showForm)
   });
 }
 
-const editShowForm = () => {
+const editForm = () => {
   addListeners();
 };
 
-export { editShowForm };
+export { editForm };

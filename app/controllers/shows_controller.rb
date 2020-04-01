@@ -3,20 +3,16 @@ class ShowsController < ApplicationController
   def create
     show = Show.new(show_params)
     if show.save
-      redirect_to home_path
+      redirect_to shows_path
     else
       redirect_to admin_path
     end
   end
 
-  def edit
-    @show = find_show
-  end
-
   def update
     show = find_show
     if show.update(show_params)
-      redirect_to home_path
+      redirect_to shows_path
     else
       redirect_to admin_path
     end
@@ -25,7 +21,7 @@ class ShowsController < ApplicationController
   def destroy
     show = find_show
     show.destroy
-    redirect_to home_path
+    redirect_to shows_path
   end
 
   private

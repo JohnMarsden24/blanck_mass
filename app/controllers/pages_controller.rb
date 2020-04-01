@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :landing, :home, :shows ]
+  skip_before_action :authenticate_user!, only: [ :landing, :home, :shows, :videos ]
 
   def landing
   end
@@ -12,6 +12,10 @@ class PagesController < ApplicationController
 
   def shows
     @shows = get_shows
+  end
+
+  def videos
+    @videos = Video.all.sort
   end
 
   private
