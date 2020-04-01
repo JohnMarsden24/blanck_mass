@@ -8,20 +8,24 @@
     <div class="shows w center">
       <h4 class="caslon tac ptb2 no-m letter-spacing">UPCOMING SHOWS</h4>
       <% @shows.each_with_index do |show, index| %>
-        <% if index == (@shows.length - 1) %>
-          <div class="d-flex justify-content-between align-items-center ptb1 mlr2">
-        <% else %>
-          <div class="d-flex justify-content-between align-items-center ptb1 mlr2 bottom-bord-1">
-        <% end %>
-          <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %>
+          <div class="ptb1 mlr2 <%= show.border?(index, @shows.length) %>">
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
+              <div class="d-flex align-items-center">
+                <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
+                <% if user_signed_in? && current_user.admin %>
+                  <button class="edit-show admin-btn" data-id="<%= show.id %>">✎</button>
+                  <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>
+                <% end %>
+              </div>
+            </div>
             <% if user_signed_in? && current_user.admin %>
-              <%= link_to "✎", edit_show_path(show), class: "no-d w no-pm" %>
-              <%= link_to "✖", show_path(show), method: :delete, class: "no-d w no-pm" %>
+              <div id="<%= dom_id(show, :inline) %>" class="mlrb2" style="display: none">
+                <%= render "shows/inline_form", show: show  %>
+              </div>
             <% end %>
-          </p>
-           <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>

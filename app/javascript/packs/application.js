@@ -24,7 +24,9 @@ require("@rails/actiontext")
 // ----------------------------------------------------
 import "bootstrap";
 import { editShowForm } from '../components/showEdit';
+import { editPostForm } from '../components/postEdit';
 
 document.addEventListener('turbolinks:load', () => {
   editShowForm();
+  editPostForm();
 });

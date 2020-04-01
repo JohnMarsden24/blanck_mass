@@ -15,15 +15,20 @@
         <div class="post mb4 pb2">
           <h4 class="caslon tac ps2"><%= post.title %></h4>
           <%= post.content.html_safe %>
-          <p class="no-pm"><%= post.time %></p>
-          <% if user_signed_in? && current_user.admin %>
-          <div class="admin-links" id="<%= dom_id(post) %>">
-            <p>
-              <%= link_to "✎", edit_post_path(post), class: "no-d w" %>
-              <%= link_to "✖", post_path(post), method: :delete, class: "no-d w" %>
-            </p>
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="no-pm"><%= post.time %></p>
+            <% if user_signed_in? && current_user.admin %>
+              <div class="d-flex align-items-center prl2">
+                <button class="edit-post admin-btn" data-id="<%= post.id %>">✎</button>
+                <%= link_to "✖", post_path(post), method: :delete, class: "admin-btn", remote: true %>
+              </div>
+            <% end %>
           </div>
-          <% end %>
+          <% if user_signed_in? && current_user.admin %>
+              <div id="<%= dom_id(post, :inline) %>" class="mlrb2" style="display: none">
+                <%= render "posts/inline_form", post: post %>
+              </div>
+            <% end %>
         </div>
       <% end %>
     </div>
@@ -33,15 +38,14 @@
         <% @shows.each_with_index do |show, index| %>
           <div class="ptb1 mlr2 <%= show.border?(index, @shows.length) %>">
             <div class="d-flex justify-content-between align-items-center">
-            <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
-            <div class="d-flex align-items-center">
-              <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
-              <% if user_signed_in? && current_user.admin %>
-                <button class="edit-show admin-btn" data-id="<%= show.id %>">✎</button>
-                <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>
-              <% end %>
-            </div>
-
+              <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
+              <div class="d-flex align-items-center">
+                <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
+                <% if user_signed_in? && current_user.admin %>
+                  <button class="edit-show admin-btn" data-id="<%= show.id %>">✎</button>
+                  <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>
+                <% end %>
+              </div>
             </div>
             <% if user_signed_in? && current_user.admin %>
               <div id="<%= dom_id(show, :inline) %>" class="mlrb2" style="display: none">
@@ -53,5 +57,7 @@
       </div>
     <% end %>
   </div>
+
+
 
 
