@@ -1,23 +1,13 @@
 .post {
-  // width: 40%;
   color: white;
-  // margin: 32px 0;
   background-color: rgba(80, 80, 80, 0.5);
-  // opacity: .7;
-  // padding: 16px 0;
-  // text-align: center;
-  // border: 2px solid rgba(255, 255, 255, 1);
+  padding: 16px;
+  margin-bottom: 32px;
+}
 
-  h4 {
-    margin: 0;
-  }
-
-  p {
-    padding: 0 16px;
-  }
-
+.post-content {
   a {
-    color: $pink;
+    color: $pink !important;
   }
 
   span {
@@ -39,15 +29,6 @@
   div {
     // text-align: center;
     max-width: 100% !important;
-  }
-}
-
-
-@media(max-width: 576px) {
-  .post {
-    p {
-    padding: 0 8px;
-    }
   }
 }
 

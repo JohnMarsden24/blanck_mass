@@ -3,30 +3,38 @@
 <div class="back-image">
 </div>
 
-<% unless @shows.empty? %>
-  <div class="past-nav">
-    <div class="shows w center">
-      <h4 class="caslon tac ptb2 no-m letter-spacing">UPCOMING SHOWS</h4>
-      <% @shows.each_with_index do |show, index| %>
-          <div class="ptb1 mlr2 <%= show.border?(index, @shows.length) %>">
-            <div class="d-flex justify-content-between align-items-center">
-              <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
-              <div class="d-flex align-items-center">
-                <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
-                <% if user_signed_in? && current_user.admin %>
-                  <button class="edit-show admin-btn" data-id="<%= show.id %>">✎</button>
-                  <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>
-                <% end %>
-              </div>
-            </div>
-            <% if user_signed_in? && current_user.admin %>
-              <div id="<%= dom_id(show, :inline) %>" class="mlrb2" style="display: none">
-                <%= render "shows/inline_form", show: show  %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
+<div class="page-container">
+  <% if @shows.empty? %>
+    <div class="no-show-container">
+      <div class="half-width-container">
+        <h2 class="caslon tac no-pm w letter-spacing-double">
+          There are no live shows at this time, check back for future announcements
+        </h2>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="shows w center">
+      <h4 class="caslon tac pt2 letter-spacing-double">UPCOMING SHOWS</h4>
+      <% @shows.each_with_index do |show, index| %>
+        <div class="<%= show.border?(index, @shows.length) %>">
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
+            <div class="d-flex align-items-center">
+              <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
+              <% if user_signed_in? && current_user.admin %>
+                <button class="edit-show admin-btn" data-id="<%= show.id %>">✎</button>
+                <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>
+              <% end %>
+            </div>
+          </div>
+          <% if user_signed_in? && current_user.admin %>
+            <div id="<%= dom_id(show, :inline) %>" style="display: none">
+              <%= render "shows/inline_form", show: show  %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
-<% end %>
+

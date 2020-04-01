@@ -18,6 +18,6 @@ class Show < ApplicationRecord
   end
 
   def border?(index, shows_length)
-    index == (shows_length - 1) ? "" : "bottom-bord-1"
+    index == (shows_length - 1) ? "pt1" : "bottom-bord-1 ptb1"
   end
 end

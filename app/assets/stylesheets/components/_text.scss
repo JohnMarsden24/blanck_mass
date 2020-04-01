@@ -1,5 +1,6 @@
 .caslon {
   font-family: 'Libre Caslon Text', serif;
+  text-shadow: 2px 2px 2px black;
 }
 
 .w {
@@ -20,6 +21,12 @@
   }
 }
 
-.letter-spacing {
+.letter-spacing-single {
   letter-spacing: 4px;
 }
+
+.letter-spacing-double {
+  letter-spacing: 8px;
+}
+
+

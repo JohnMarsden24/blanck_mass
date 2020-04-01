@@ -6,21 +6,21 @@ class PagesController < ApplicationController
 
   def home
     @posts = Post.all.sort
-    get_shows
+    @shows = get_shows
+    @layout = shows_empty(@shows)
   end
 
   def shows
-    get_shows
-  end
-
-  def test
+    @shows = get_shows
   end
 
   private
 
-  def get_shows
-    @shows = Show.where("date >= ?", Time.now).order(:date)
+  def shows_empty(shows)
+    shows.empty? ? "justify-content-center" : "justify-content-start"
   end
 
-
+  def get_shows
+    Show.where("date >= ?", Time.now).order(:date)
+  end
 end
