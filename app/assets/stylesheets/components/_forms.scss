@@ -1,0 +1,26 @@
+.new-post {
+  grid-area: new-post;
+  // width: 50%;
+}
+
+.new-show {
+  grid-area: new-show;
+}
+
+.new-video {
+  grid-area: new-video
+  // align-self: end;
+}
+
+.form {
+  align-self: stretch;
+  background-color: rgba(80, 80, 80, 0.5);
+  padding: 16px;
+  // width: 100%;
+}
+
+@media(max-width: 576px) {
+  .form {
+    // width: 100%;
+  }
+}

@@ -4,6 +4,7 @@ class AdminController < ApplicationController
   def home
     @post = Post.new
     @show = Show.new
+    @video = Video.new
   end
 
   private

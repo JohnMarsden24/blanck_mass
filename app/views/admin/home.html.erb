@@ -17,23 +17,33 @@
 <div class="back-image">
 </div>
 
-<div class="grid-cont-admin w past-nav">
-  <div class="ps4">
-    <h2 class="caslon">New post</h2>
-    <%= simple_form_for @post, class: "hello" do |f| %>
-      <%= f.input :title %>
-      <%= f.input :content, input_html: { id: "my-form", rows:"15"} %>
-      <%= f.button :submit, class: "btn-full-width"%>
-    <% end %>
-  </div>
-  <div class="ps4">
-    <h2 class="caslon">New show</h2>
-    <%= simple_form_for (@show) do |f| %>
-      <%= f.input :date %>
-      <%= f.input :location %>
-      <%= f.input :link %>
-      <%= f.button :submit, class: "btn-full-width"%>
-    <% end %>
+<div class="page-container">
+  <div class="grid-container-admin w">
+    <div class="form new-post">
+      <h2>New post</h2>
+      <%= simple_form_for @post, class: "hello" do |f| %>
+        <%= f.input :title %>
+        <%= f.input :content, input_html: { id: "my-form", rows:"15"} %>
+        <%= f.button :submit, class: "bm-btn"%>
+      <% end %>
+    </div>
+    <div class="form new-show">
+      <h2>New show</h2>
+      <%= simple_form_for (@show) do |f| %>
+        <%= f.input :date %>
+        <%= f.input :location %>
+        <%= f.input :link %>
+        <%= f.button :submit, class: "bm-btn"%>
+      <% end %>
+    </div>
+    <div class="form new-video">
+      <h2>New video</h2>
+      <%= simple_form_for (@video) do |f| %>
+        <%= f.input :link %>
+        <%= f.input :caption %>
+        <%= f.button :submit, class: "bm-btn"%>
+      <% end %>
+    </div>
   </div>
 </div>
 

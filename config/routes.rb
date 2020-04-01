@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   get "/home", to: "pages#home"
   get "/shows", to: "pages#shows"
+  get "/videos", to: "pages#videos"
   get "/admin", to: "admin#home"
 
-  resources :posts, :shows
+  resources :posts, :shows, :videos, only: [:create, :update, :destroy]
 
   devise_for :users, skip: [:sessions, :registrations, :passwords]
 

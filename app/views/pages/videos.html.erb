@@ -1,0 +1,34 @@
+<%= render "shared/navbar" %>
+
+<div class="back-image">
+</div>
+
+<div class="page-container">
+  <div class="grid-container">
+    <% @videos.each do |video| %>
+      <div>
+        <div class="iframe-container">
+          <%= video.link.html_safe %>
+        </div>
+        <% if video.caption? || (user_signed_in? && current_user.admin) %>
+          <div class="caption w ptb1">
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="center"><%= video.caption %></p>
+              <% if user_signed_in? && current_user.admin %>
+                <div class="d-flex align-items-center">
+                  <button class="edit admin-btn" data-id="<%= video.id %>" data-type="<%= video.class.to_s.downcase %>">✎</button>
+                  <%= link_to "✖", video_path(video), method: :delete, class: "admin-btn", remote: true %>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? && current_user.admin %>
+              <div id="<%= dom_id(video, :inline) %>" class="ps2" style="display: none">
+                <%= render "video/inline_form", video: video %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

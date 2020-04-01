@@ -16,7 +16,7 @@
             <p class="no-pm"><%= post.time %></p>
             <% if user_signed_in? && current_user.admin %>
               <div class="d-flex align-items-center">
-                <button class="edit-post admin-btn" data-id="<%= post.id %>">✎</button>
+                <button class="edit admin-btn" data-id="<%= post.id %>" data-type="<%= post.class.to_s.downcase %>">✎</button>
                 <%= link_to "✖", post_path(post), method: :delete, class: "admin-btn", remote: true %>
               </div>
             <% end %>
@@ -39,7 +39,7 @@
               <div class="d-flex align-items-center">
                 <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
                 <% if user_signed_in? && current_user.admin %>
-                  <button class="edit-show admin-btn" data-id="<%= show.id %>">✎</button>
+                  <button class="edit admin-btn" data-id="<%= show.id %>" data-type="<%= show.class.to_s.downcase %>">✎</button>
                   <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>
                 <% end %>
               </div>
