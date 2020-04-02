@@ -1,9 +1,6 @@
-<%= render "shared/navbar" %>
-<div class="back-image">
-</div>
 <div class="page-container">
   <div class="half-width-container center w">
-    <h2 class="caslon">Log in</h2>
+    <h2>Log in</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,

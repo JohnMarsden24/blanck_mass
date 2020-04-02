@@ -8,14 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% api_key = ENV['tiny_api_key'] %>
+
+    <script src="https://cdn.tiny.cloud/1/<%= api_key %>/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
   </head>
 
   <body>
+    <% unless request.path == "/" %>
+      <%= render "shared/navbar" %>
+      <div class="back-image"></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
