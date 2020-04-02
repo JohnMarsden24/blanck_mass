@@ -2,15 +2,16 @@
   <div class="logo">
   </div>
   <div class="links">
-    <%= link_to "HOME", home_path, class: "w caslon no-d letter-spacing"  %>
-    <%= link_to "SHOWS", shows_path, class: "w caslon no-d letter-spacing" %>
-    <%= link_to "AUDIO", audios_path, class: "w caslon no-d letter-spacing" %>
-    <%= link_to "VIDEOS", videos_path, class: "w caslon no-d letter-spacing" %>
-    <%= link_to "MERCH", "https://blanck-mass.tmstor.es/", class: "w caslon no-d letter-spacing-single", target: "_blank" %>
-    <%= link_to "CONTACT", contacts_path, class: "w caslon no-d letter-spacing" %>
+    <p><%= @active %></p>
+    <%= link_to "HOME", home_path, class: "w caslon no-d letter-spacing", id: "home"  %>
+    <%= link_to "SHOWS", shows_path, class: "w caslon no-d letter-spacing", id: "shows" %>
+    <%= link_to "AUDIO", audio_path, class: "w caslon no-d letter-spacing", id: "audio" %>
+    <%= link_to "VIDEOS", videos_path, class: "w caslon no-d letter-spacing", id: "videos" %>
+    <%= link_to "MERCH", "https://blanck-mass.tmstor.es/", class: "w caslon no-d letter-spacing-single", target: "_blank", id: "merch" %>
+    <%= link_to "CONTACT", contact_path, class: "w caslon no-d letter-spacing", id: "contact" %>
     <% if user_signed_in? && current_user.admin %>
-      <%= link_to "ADMIN", admin_path, class: "w caslon no-d letter-spacing-single" %>
-      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "w caslon no-d letter-spacing-single" %>
+      <%= link_to "ADMIN", admin_path, class: "w caslon no-d letter-spacing-single", id: "admin" %>
+      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "w caslon no-d letter-spacing-single", id: "log-out" %>
     <% end %>
   </div>
 </div>

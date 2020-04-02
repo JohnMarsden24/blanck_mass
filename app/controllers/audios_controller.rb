@@ -2,7 +2,7 @@ class AudiosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @audio = Audio.all.reverse
+    @audio = Audio.all.order(created_at: :desc)
   end
 
   def create

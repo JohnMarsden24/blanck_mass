@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @videos = Video.all.reverse
+    @videos = Video.all.order(created_at: :desc)
   end
 
   def create
@@ -18,8 +18,7 @@ class VideosController < ApplicationController
   def update
     video = find_video
     if video.update(video_params)
-      video.link = video.embed
-      video.save
+      video.link_check
       redirect_to videos_path
     else
       redirect_to admin_path

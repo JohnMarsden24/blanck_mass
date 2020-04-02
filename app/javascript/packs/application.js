@@ -26,10 +26,11 @@ import "bootstrap";
 import { editForm } from '../components/editForm';
 import { postEditor } from '../components/tinyMCE';
 import { embedIframes } from '../components/embedIframes';
+import { setActive } from '../components/setActive';
 
 document.addEventListener('turbolinks:load', () => {
   editForm();
-  tinymce.remove()
   postEditor();
   embedIframes();
+  setActive();
 });
