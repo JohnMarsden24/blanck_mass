@@ -13,48 +13,21 @@
 
 // p = padding / s = square / r = recentangle / t = top / r = right / b = bottom / l = left / 1-4 in 8px intervals
 
-.past-nav {
-  padding-top: 15vh;
-}
-
 .pb2 {
   padding-bottom: 16px;
-}
-
-.prl2 {
-  padding-right: 16px;
-  padding-left: 16px;
 }
 
 .ps2 {
   padding: 16px;
 }
 
-.ps4 {
-  padding: 32px;
-}
-
 .ptb1 {
   padding-top: 8px;
   padding-bottom: 8px;
-}
-
-.ptb1 {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.ptb2 {
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
 
 .pt1 {
   padding-top: 8px;
-}
-
-.pt4 {
-  padding-top: 32px;
 }
 
 // MARGIN
@@ -65,79 +38,14 @@
   margin-bottom: 32px;
 }
 
-.ml2 {
-  margin-left: 16px;
-}
-
-.ml4 {
-  margin-left: 64px;
-}
-
-.mlr2 {
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-.mlrb2 {
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-bottom: 16px;
-}
-
 .mr4 {
   margin-right: 64px;
-}
-
-.ms2 {
-  margin: 16px;
-}
-
-.mt2 {
-  margin-top: 16px;
-}
-
-.mt2 {
-  margin-top: 16px;
-}
-
-.mt4 {
-  margin-top: 32px;
-}
-
-.mtb1 {
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.mtb2 {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.mtb3 {
-  margin: 24px 0;
 }
 
 // SPACING AND WIDTH
 
 .center {
   margin: 0 auto;
-}
-
-.full-height {
-  height: 100vh;
-}
-
-.min-full-height {
-  min-height: 100vh;
-}
-
-.max-full-height {
-  max-height: 100vh;
-}
-
-.max-width {
-  max-width: 100vw;
 }
 
 .width-half {
@@ -151,9 +59,3 @@
     width: 80%;
   }
 }
-
-// @media(max-width: 576px) {
-//   .width-half {
-//     width: 80%;
-//   }
-// }

@@ -9,7 +9,7 @@ class AudiosController < ApplicationController
     audio = Audio.new(audio_params)
     audio.link = audio.embed
     if audio.save
-      redirect_to music_path
+      redirect_to audios_index_path
     else
       redirect_to admin_path
     end
@@ -20,7 +20,7 @@ class AudiosController < ApplicationController
     if audio.update(audio_params)
       audio.link = audio.embed
       audio.save
-      redirect_to music_path
+      redirect_to audios_index_path
     else
       redirect_to admin_path
     end
@@ -29,7 +29,7 @@ class AudiosController < ApplicationController
   def destroy
     audio = find_audio
     audio.destroy
-    redirect_to music_path
+    redirect_to audios_index_path
   end
 
   private

@@ -7,6 +7,13 @@
   width: 50%
 }
 
+.full-height-container {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -84,6 +91,4 @@
   .page-container {
     padding: 16px 16px;
   }
-
-
 }

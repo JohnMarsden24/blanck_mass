@@ -1,6 +1,6 @@
 <div class="page-container">
   <% if @shows.empty? %>
-    <div class="no-show-container">
+    <div class="full-height-container">
       <div class="half-width-container">
         <h2 class="caslon tac no-pm w letter-spacing-double">
           There are no live shows at this time, check back for future announcements
@@ -8,7 +8,7 @@
       </div>
     </div>
   <% else %>
-    <div class="shows w center">
+    <div class="shows w center grey-bg">
       <h4 class="caslon tac pt2 letter-spacing-double">UPCOMING SHOWS</h4>
       <% @shows.each_with_index do |show, index| %>
         <div class="<%= show.border?(index, @shows.length) %>">

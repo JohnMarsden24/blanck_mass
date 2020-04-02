@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @posts = Post.all.reverse
+    @posts = Post.all.order(created_at: :desc)
     @shows = Show.get_shows
     @layout = shows_empty(@shows)
   end

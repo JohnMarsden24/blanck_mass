@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   get "/home", to: "pages#home"
   get "/admin", to: "admin#home"
-  get "/audio", to: "audios#index"
-  get "/contact", to: "contacts#index"
+  get "/audio", to: "audios#index", as: 'audios_index'
+  get "/contact", to: "contacts#index", as: 'contacts_index'
 
   resources :shows, :videos, only: [:index, :create, :update, :destroy]
   resources :posts, :audios, :contacts, only: [:create, :update, :destroy ]
