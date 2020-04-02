@@ -1,14 +1,14 @@
 <div class="page-container">
   <div class="grid-container-admin w">
-    <div class="form new-post">
+    <div class="form new-post grey-bg ps2">
       <h2>New post</h2>
       <%= simple_form_for @post, class: "hello" do |f| %>
         <%= f.input :title %>
-        <%= f.input :content, input_html: { class: "post-form", rows:"15"} %>
+        <%= f.input :content, input_html: { class: "post-form", rows:"20"} %>
         <%= f.button :submit, class: "bm-btn"%>
       <% end %>
     </div>
-    <div class="form new-show">
+    <div class="form new-show grey-bg ps2">
       <h2>New show</h2>
       <%= simple_form_for (@show) do |f| %>
         <%= f.input :date %>
@@ -17,7 +17,7 @@
         <%= f.button :submit, class: "bm-btn"%>
       <% end %>
     </div>
-    <div class="form new-video">
+    <div class="form new-video grey-bg ps2">
       <h2>New video</h2>
       <%= simple_form_for (@video) do |f| %>
         <%= f.input :link %>
@@ -25,10 +25,19 @@
         <%= f.button :submit, class: "bm-btn"%>
       <% end %>
     </div>
-    <div class="form new-audio">
+    <div class="form new-audio grey-bg ps2">
       <h2>New audio</h2>
       <%= simple_form_for (@audio) do |f| %>
         <%= f.input :link %>
+        <%= f.button :submit, class: "bm-btn"%>
+      <% end %>
+    </div>
+    <div class="form new-contact grey-bg ps2">
+      <h2>New contact</h2>
+      <%= simple_form_for (@contact) do |f| %>
+        <%= f.input :email %>
+        <%= f.input :name %>
+        <%= f.input :job_description %>
         <%= f.button :submit, class: "bm-btn"%>
       <% end %>
     </div>

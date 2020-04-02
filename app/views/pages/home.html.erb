@@ -2,7 +2,7 @@
   <div class="d-flex <%= @layout %>">
     <div class="half-width-container">
       <% @posts.each do |post| %>
-        <div class="post">
+        <div class="post grey-bg">
           <h4 class="caslon tac no-m pb2 letter-spacing-double"><%= post.title %></h4>
           <div class="post-content">
             <%= post.content.html_safe %>
@@ -25,7 +25,7 @@
       <% end %>
     </div>
     <% unless @shows.empty? %>
-      <div class="shows-widget w overflow mr4">
+      <div class="shows-widget w overflow mr4 grey-bg">
         <h4 class="caslon tac no-m pb2 letter-spacing-double">UPCOMING SHOWS</h4>
         <% @shows.each_with_index do |show, index| %>
           <div class="<%= show.border?(index, @shows.length) %>">

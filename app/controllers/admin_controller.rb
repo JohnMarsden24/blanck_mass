@@ -6,6 +6,7 @@ class AdminController < ApplicationController
     @show = Show.new
     @video = Video.new
     @audio = Audio.new
+    @contact = Contact.new
   end
 
   private

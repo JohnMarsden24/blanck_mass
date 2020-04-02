@@ -69,6 +69,15 @@
   .grid-container {
     grid-template-columns: 1fr;
   }
+
+  .grid-container-admin {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "new-post"
+    "new-show"
+    "new-video"
+    "new-audio";
+  }
 }
 
 @media(max-width: 576px) {

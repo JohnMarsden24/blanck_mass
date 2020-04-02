@@ -4,10 +4,10 @@
   <div class="links">
     <%= link_to "HOME", home_path, class: "w caslon no-d letter-spacing"  %>
     <%= link_to "SHOWS", shows_path, class: "w caslon no-d letter-spacing" %>
-    <%= link_to "MUSIC", music_path, class: "w caslon no-d letter-spacing" %>
+    <%= link_to "AUDIO", audios_path, class: "w caslon no-d letter-spacing" %>
     <%= link_to "VIDEOS", videos_path, class: "w caslon no-d letter-spacing" %>
     <%= link_to "MERCH", "https://blanck-mass.tmstor.es/", class: "w caslon no-d letter-spacing-single", target: "_blank" %>
-    <a href="" class="w caslon no-d letter-spacing-single">CONTACT</a>
+    <%= link_to "CONTACT", contacts_path, class: "w caslon no-d letter-spacing" %>
     <% if user_signed_in? && current_user.admin %>
       <%= link_to "ADMIN", admin_path, class: "w caslon no-d letter-spacing-single" %>
       <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "w caslon no-d letter-spacing-single" %>

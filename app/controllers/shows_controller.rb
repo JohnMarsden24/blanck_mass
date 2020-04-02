@@ -1,4 +1,9 @@
 class ShowsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
+  def index
+    @shows = Show.get_shows
+  end
 
   def create
     show = Show.new(show_params)
