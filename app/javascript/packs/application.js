@@ -25,9 +25,11 @@ require("@rails/actiontext")
 import "bootstrap";
 import { editForm } from '../components/editForm';
 import { postEditor } from '../components/tinyMCE';
+import { embedIframes } from '../components/embedIframes';
 
 document.addEventListener('turbolinks:load', () => {
   editForm();
   tinymce.remove()
   postEditor();
+  embedIframes();
 });
