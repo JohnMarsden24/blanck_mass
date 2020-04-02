@@ -1,5 +1,9 @@
 class Show < ApplicationRecord
 
+  def self.get_shows
+    Show.where("date >= ?", Time.now).order(:date)
+  end
+
   def display_date
     date = self.date.strftime("%-d#{ordinal_check} %b %y")
   end

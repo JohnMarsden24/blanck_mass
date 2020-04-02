@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   root to: "pages#landing"
 
   get "/home", to: "pages#home"
-  get "/shows", to: "pages#shows"
-  get "/music", to: "pages#music"
-  get "/videos", to: "pages#videos"
+  # get "/shows", to: "pages#shows"
+  # get "/music", to: "pages#music"
+  # get "/videos", to: "pages#videos"
+  # get "/lin", to: "pages#contact"
   get "/admin", to: "admin#home"
 
-  resources :posts, :shows, :videos, :audios, only: [:create, :update, :destroy]
+  resources :posts, :shows, :videos, :audios, :contacts, only: [:index, :create, :update, :destroy]
 
   devise_for :users, skip: [:sessions, :registrations, :passwords]
 

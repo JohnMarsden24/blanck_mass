@@ -1,4 +1,9 @@
 class AudiosController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
+  def index
+    @audio = Audio.all.reverse
+  end
 
   def create
     audio = Audio.new(audio_params)

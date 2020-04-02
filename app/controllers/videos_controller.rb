@@ -1,4 +1,9 @@
 class VideosController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
+  def index
+    @videos = Video.all.reverse
+  end
 
   def create
     video = Video.new(video_params)
