@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @posts = Post.all.sort
+    @posts = Post.all.order(created_at: :desc)
     @shows = Show.get_shows
     @layout = shows_empty(@shows)
   end
@@ -15,4 +15,5 @@ class PagesController < ApplicationController
   def shows_empty(shows)
     shows.empty? ? "justify-content-center" : "justify-content-start"
   end
+
 end

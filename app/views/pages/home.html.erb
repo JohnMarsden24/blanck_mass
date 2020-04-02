@@ -2,7 +2,7 @@
   <div class="d-flex <%= @layout %>">
     <div class="half-width-container">
       <% @posts.each do |post| %>
-        <div class="post grey-bg">
+        <div class="grey-bg ps2 mb4 w">
           <h4 class="caslon tac no-m pb2 letter-spacing-double"><%= post.title %></h4>
           <div class="post-content">
             <%= post.content.html_safe %>
@@ -32,7 +32,9 @@
             <div class="d-flex justify-content-between align-items-center">
               <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
               <div class="d-flex align-items-center">
-                <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
+                <% unless show.link.empty? %>
+                  <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
+                <% end %>
                 <% if user_signed_in? && current_user.admin %>
                   <button class="edit admin-btn" data-id="<%= show.id %>" data-type="<%= show.class.to_s.downcase %>">✎</button>
                   <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>

@@ -6,7 +6,6 @@ const existChecker = (form) => {
   };
 };
 
-
 const showForm = (event) => {
   const id = event.currentTarget.dataset.id;
   const elem = event.currentTarget.dataset.type;

@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
   def create
     contact = Contact.new(contact_params)
     if contact.save
-      redirect_to contacts_path
+      redirect_to contacts_index_path
     else
       redirect_to admin_path
     end
@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
   def update
     contact = find_contact
     if contact.update(contact_params)
-      redirect_to contacts_path
+      redirect_to contacts_index_path
     else
       redirect_to admin_path
     end
@@ -26,7 +26,7 @@ class ContactsController < ApplicationController
   def destroy
     contact = find_contact
     contact.destroy
-    redirect_to contacts_path
+    redirect_to contacts_index_path
   end
 
   private

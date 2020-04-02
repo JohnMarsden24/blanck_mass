@@ -22,4 +22,11 @@ class Video < ApplicationRecord
     detect_host
   end
 
+  def link_check
+    unless self.link[0] == "<"
+      self.link = embed
+      self.save
+    end
+  end
+
 end
