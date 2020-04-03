@@ -1,5 +1,11 @@
 class PostsController < ObjectsController
 
+  def index
+    super
+    @shows = Show.get_shows
+    @layout = Show.shows_empty?(@shows)
+  end
+
   private
 
   def redirect

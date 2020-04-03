@@ -5,6 +5,10 @@ class Show < ApplicationRecord
     Show.where("date >= ?", Time.now).order(:date)
   end
 
+  def self.shows_empty?(shows)
+    shows.empty? ? "justify-content-center" : "justify-content-start"
+  end
+
   def display_date
     date = self.date.strftime("%-d#{ordinal_check} %b %y")
   end
