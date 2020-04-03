@@ -1,4 +1,4 @@
-class VideosController < AdminController
+class VideosController < ObjectsController
 
   private
 

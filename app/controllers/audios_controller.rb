@@ -1,4 +1,4 @@
-class AudiosController < AdminController
+class AudiosController < ObjectsController
 
   private
 

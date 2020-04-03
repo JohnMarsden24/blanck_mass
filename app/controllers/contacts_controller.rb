@@ -1,4 +1,4 @@
-class ContactsController < AdminController
+class ContactsController < ObjectsController
 
   private
 
