@@ -1,4 +1,4 @@
-class PostsController < AdminController
+class PostsController < ObjectsController
 
   private
 

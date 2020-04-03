@@ -1,4 +1,4 @@
-class ShowsController < AdminController
+class ShowsController < ObjectsController
 
   def index
     @shows = Show.get_shows

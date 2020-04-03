@@ -7,23 +7,22 @@ class ObjectsController < ApplicationController
   end
 
   def create
-    object = @class_name.new(strong_params)
-    embedded(object)
-    if object.save
+    @object = @class_name.new(strong_params)
+    if @object.save
+      embedded(@object)
       redirect
     else
-      redirect_to admin_path
+      render "shared/error"
     end
   end
 
   def update
-    object = find_object
-    if object.update(strong_params)
-      embedded(object)
-      object.save
+    @object = find_object
+    if @object.update(strong_params)
+      embedded(@object)
       redirect
     else
-      redirect_to admin_path
+      render "shared/error"
     end
   end
 
@@ -39,6 +38,7 @@ class ObjectsController < ApplicationController
     if @class_name.method_defined? :embed_link
       object.embed = object.embed_link
     end
+    object.save
   end
 
   def find_object
