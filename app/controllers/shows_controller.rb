@@ -1,41 +1,16 @@
-class ShowsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+class ShowsController < AdminController
 
   def index
     @shows = Show.get_shows
   end
 
-  def create
-    show = Show.new(show_params)
-    if show.save
-      redirect_to shows_path
-    else
-      redirect_to admin_path
-    end
-  end
+  private
 
-  def update
-    show = find_show
-    if show.update(show_params)
-      redirect_to shows_path
-    else
-      redirect_to admin_path
-    end
-  end
-
-  def destroy
-    show = find_show
-    show.destroy
+  def redirect
     redirect_to shows_path
   end
 
-  private
-
-  def find_show
-    Show.find(params[:id])
-  end
-
-  def show_params
+  def strong_params
     params.require(:show).permit(:date, :location, :link)
   end
 end

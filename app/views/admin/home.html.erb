@@ -2,7 +2,7 @@
   <div class="grid-container-admin w">
     <div class="form new-post grey-bg ps2">
       <h2>New post</h2>
-      <%= simple_form_for @post, class: "hello" do |f| %>
+      <%= simple_form_for @post do |f| %>
         <%= f.input :title %>
         <%= f.input :content, input_html: { class: "post-form", rows:"20"} %>
         <%= f.button :submit, class: "bm-btn"%>

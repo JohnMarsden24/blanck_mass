@@ -1,43 +1,12 @@
-class VideosController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-
-  def index
-    @videos = Video.all.order(created_at: :desc)
-  end
-
-  def create
-    video = Video.new(video_params)
-    video.link = video.embed
-    if video.save
-      redirect_to videos_path
-    else
-      redirect_to admin_path
-    end
-  end
-
-  def update
-    video = find_video
-    if video.update(video_params)
-      video.link_check
-      redirect_to videos_path
-    else
-      redirect_to admin_path
-    end
-  end
-
-  def destroy
-    video = find_video
-    video.destroy
-    redirect_to videos_path
-  end
+class VideosController < AdminController
 
   private
 
-  def find_video
-    Video.find(params[:id])
+  def redirect
+    redirect_to videos_path
   end
 
-  def video_params
+  def strong_params
     params.require(:video).permit(:link, :caption)
   end
 end

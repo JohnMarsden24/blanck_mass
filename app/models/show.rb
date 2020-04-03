@@ -1,4 +1,5 @@
 class Show < ApplicationRecord
+  validates :date, :location, presence: true
 
   def self.get_shows
     Show.where("date >= ?", Time.now).order(:date)
@@ -22,6 +23,8 @@ class Show < ApplicationRecord
   end
 
   def border?(index, shows_length)
-    index == (shows_length - 1) ? "pt1" : "bottom-bord-1 ptb1"
+    unless index == (shows_length - 1)
+      "bottom-bord-1"
+    end
   end
 end

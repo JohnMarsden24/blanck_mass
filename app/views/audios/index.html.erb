@@ -1,9 +1,9 @@
 <div class="page-container">
   <div class="grid-container">
-    <% @audio.each do |audio| %>
+    <% @objects.each do |audio| %>
       <div>
         <div class="iframe-container">
-          <%= audio.link.html_safe %>
+          <%= audio.embed.html_safe %>
         </div>
         <% if user_signed_in? && current_user.admin %>
           <div class="grey-bg w">
@@ -12,7 +12,7 @@
               <%= link_to "✖", audio_path(audio), method: :delete, class: "admin-btn", remote: true %>
             </div>
             <div id="<%= dom_id(audio, :inline) %>" class="ps2" style="display: none">
-              <%= render "audios/inline_form", audio: audio %>
+              <%= render "audios/inline_form", object: audio %>
             </div>
           </div>
         <% end %>
