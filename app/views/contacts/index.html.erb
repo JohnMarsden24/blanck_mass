@@ -1,6 +1,6 @@
 <div class="page-container">
   <div class="half-width-container w center grey-bg ps2">
-    <% @contacts.each do |contact| %>
+    <% @objects.each do |contact| %>
       <div class="d-flex align-items-center justify-content-between">
         <p class="no-pm center"><%= mail_to contact.email, "<i class='fas fa-envelope-open-text no-d w'></i>".html_safe %> / <%= contact.name %> / <%= contact.job_description %>
         </p>
@@ -13,7 +13,7 @@
       </div>
       <div class="caption w">
         <div id="<%= dom_id(contact, :inline) %>" class="ps2" style="display: none">
-          <%= render "contacts/inline_form", contact: contact %>
+          <%= render "contacts/inline_form", object: contact %>
         </div>
       </div>
     <% end %>

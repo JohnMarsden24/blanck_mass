@@ -42,7 +42,7 @@
   margin-right: 64px;
 }
 
-// SPACING AND WIDTH
+// SPACING, WIDTH, HEIGHT
 
 .center {
   margin: 0 auto;
@@ -50,6 +50,10 @@
 
 .width-half {
   width: 50%;
+}
+
+.height64 {
+  height: 64px;
 }
 
 // MEDIA QUERIES

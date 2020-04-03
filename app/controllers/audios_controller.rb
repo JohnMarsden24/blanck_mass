@@ -1,44 +1,12 @@
-class AudiosController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-
-  def index
-    @audio = Audio.all.order(created_at: :desc)
-  end
-
-  def create
-    audio = Audio.new(audio_params)
-    audio.link = audio.embed
-    if audio.save
-      redirect_to audios_index_path
-    else
-      redirect_to admin_path
-    end
-  end
-
-  def update
-    audio = find_audio
-    if audio.update(audio_params)
-      audio.link = audio.embed
-      audio.save
-      redirect_to audios_index_path
-    else
-      redirect_to admin_path
-    end
-  end
-
-  def destroy
-    audio = find_audio
-    audio.destroy
-    redirect_to audios_index_path
-  end
+class AudiosController < AdminController
 
   private
 
-  def find_audio
-    Audio.find(params[:id])
+  def redirect
+    redirect_to audios_index_path
   end
 
-  def audio_params
+  def strong_params
     params.require(:audio).permit(:link)
   end
 end

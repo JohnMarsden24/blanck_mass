@@ -1,9 +1,9 @@
 <div class="page-container">
   <div class="grid-container">
-    <% @videos.each do |video| %>
+    <% @objects.each do |video| %>
       <div>
         <div class="iframe-container">
-          <%= video.link.html_safe %>
+          <%= video.embed.html_safe %>
         </div>
         <% if video.caption? || (user_signed_in? && current_user.admin) %>
           <div class="grey-bg w ptb1">
@@ -18,7 +18,7 @@
             </div>
             <% if user_signed_in? && current_user.admin %>
               <div id="<%= dom_id(video, :inline) %>" class="ps2" style="display: none">
-                <%= render "videos/inline_form", video: video %>
+                <%= render "videos/inline_form", object: video %>
               </div>
             <% end %>
           </div>

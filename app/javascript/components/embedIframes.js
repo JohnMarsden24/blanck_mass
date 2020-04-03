@@ -13,9 +13,11 @@ const detectYouTube = (item) => {
 };
 
 const embedIframes = () => {
-  const list = document.getElementsByTagName("iframe");
-  for (let item of list) {
-    detectYouTube(item);
+  if (document.location.pathname.substr(1) === "home") {
+    const list = document.getElementsByTagName("iframe");
+    for (let item of list) {
+      detectYouTube(item);
+    };
   };
 };
 

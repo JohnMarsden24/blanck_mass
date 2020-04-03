@@ -1,0 +1,8 @@
+<div class="page-container">
+  <div class="full-height-container">
+    <div class="half-width-container w">
+      <h1>New <%= @object.class.to_s.downcase %> error</h1>
+      <%= render "#{ActiveSupport::Inflector.pluralize(@object.class.to_s.downcase)}/inline_form", object: @object  %>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 class Audio < ApplicationRecord
+  validates :link, presence: true
 
   def detect_album_or_song
     if self.link =~ /(album)/
@@ -18,7 +19,7 @@ class Audio < ApplicationRecord
     code.captures.first
   end
 
-  def embed
+  def embed_link
     detect_album_or_song
   end
 end
