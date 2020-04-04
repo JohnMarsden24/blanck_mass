@@ -1,7 +1,7 @@
 class Audio < ApplicationRecord
   validates :link, presence: true
 
-  after_save :embed_link
+  before_save :embed_link
 
   private
 
@@ -24,7 +24,7 @@ class Audio < ApplicationRecord
   end
 
   def embed_link
-    detect_album_or_song
+    self.embed = detect_album_or_song
   end
 end
 
