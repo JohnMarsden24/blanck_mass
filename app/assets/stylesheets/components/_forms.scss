@@ -1,5 +1,6 @@
 .new-post {
   grid-area: new-post;
+  position: relative;
 }
 
 .new-show {
@@ -12,5 +13,9 @@
 
 .form {
   align-self: start;
+}
+
+.pinned-form {
+  position: absolute;
 }
 

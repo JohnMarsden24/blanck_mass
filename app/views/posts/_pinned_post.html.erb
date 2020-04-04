@@ -1,0 +1,21 @@
+<div class="grey-bg ps2 mb4 w">
+  <h1>PINNED POST</h1>
+  <h4 class="caslon tac no-m pb2 letter-spacing-double"><%= @pinned.title %></h4>
+  <div class="post-content">
+    <%= @pinned.content.html_safe %>
+  </div>
+  <div class="d-flex align-items-center justify-content-between">
+    <p class="no-pm"><%= @pinned.time %></p>
+    <% if user_signed_in? && current_user.admin %>
+      <div class="d-flex align-items-center">
+        <button class="edit admin-btn" data-id="<%= @pinned.id %>" data-type="<%= @pinned.class.to_s.downcase %>">✎</button>
+        <%= link_to "✖", @pinned, method: :delete, class: "admin-btn", remote: true %>
+      </div>
+    <% end %>
+  </div>
+  <% if user_signed_in? && current_user.admin %>
+    <div id="<%= dom_id(@pinned, :inline) %>" style="display: none">
+      <%= render "posts/inline_form", object: @pinned %>
+    </div>
+  <% end %>
+</div>

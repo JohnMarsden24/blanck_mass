@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: "pages#landing"
 
-  get "/home", to: "posts#index"
+  get "/home", to: "posts#index", as: 'paths_index'
   get "/admin", to: "admin#home"
   get "/audio", to: "audios#index", as: 'audios_index'
   get "/contact", to: "contacts#index", as: 'contacts_index'

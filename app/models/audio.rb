@@ -1,6 +1,10 @@
 class Audio < ApplicationRecord
   validates :link, presence: true
 
+  after_save :embed_link
+
+  private
+
   def detect_album_or_song
     if self.link =~ /(album)/
       "<iframe src='https://open.spotify.com/embed/album/#{album_code}' width='300' height='auto' frameborder='0' allowtransparency='true' allow='encrypted-media'></iframe>"

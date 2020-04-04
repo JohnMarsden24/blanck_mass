@@ -1,13 +1,17 @@
 class Video < ApplicationRecord
   validates :link, presence: true
 
+  after_save :detect_host
+
+  private
 
   def detect_host
     if self.link =~ /(youtube)/
-      "<iframe width='560' height='315' src='https://www.youtube.com/embed/#{youtube_code}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+      self.embed = "<iframe width='560' height='315' src='https://www.youtube.com/embed/#{youtube_code}' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
     else
-      "<iframe src='https://player.vimeo.com/video/#{vimeo_code}?color=ffffff' width='640' height='360' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>"
+      self.embed = "<iframe src='https://player.vimeo.com/video/#{vimeo_code}?color=ffffff' width='640' height='360' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>"
     end
+    self.save
   end
 
   def youtube_code
@@ -21,6 +25,7 @@ class Video < ApplicationRecord
   end
 
   def embed_link
-    detect_host
+    # self.embed = detect_host
+    # self.save
   end
 end

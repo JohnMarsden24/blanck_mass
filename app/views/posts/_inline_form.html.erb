@@ -1,6 +1,7 @@
 <%= simple_form_for object do |f| %>
   <%= f.input :title %>
   <%= f.input :content, input_html: { class: "post-form" , rows:"10"} %>
+  <%= f.input :pinned %>
   <%= f.button :submit, class: "bm-btn"%>
 <% end %>
 

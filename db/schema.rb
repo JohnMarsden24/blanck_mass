@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_210723) do
+ActiveRecord::Schema.define(version: 2020_04_02_110824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "audios", force: :cascade do |t|
     t.string "link"
+    t.string "embed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "embed"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_210723) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.boolean "pinned", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -60,10 +61,10 @@ ActiveRecord::Schema.define(version: 2020_04_02_210723) do
 
   create_table "videos", force: :cascade do |t|
     t.string "link"
+    t.string "caption"
+    t.string "embed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "caption", default: ""
-    t.string "embed"
   end
 
 end
