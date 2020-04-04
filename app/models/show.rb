@@ -1,10 +1,6 @@
 class Show < ApplicationRecord
   validates :date, :location, presence: true
 
-  def self.get_shows
-    Show.where("date >= ?", Time.now).order(:date)
-  end
-
   def display_date
     date = self.date.strftime("%-d#{ordinal_check} %b %y")
   end
@@ -27,4 +23,16 @@ class Show < ApplicationRecord
       "bottom-bord-1"
     end
   end
+
+  private
+
+  def self.get_shows
+
+    Show.where("date >= ?", Time.now).order(:date)
+  end
+
+  def self.shows_empty?(shows)
+    shows.empty? ? "justify-content-center" : "justify-content-start"
+  end
+
 end

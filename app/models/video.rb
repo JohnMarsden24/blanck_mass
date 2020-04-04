@@ -1,6 +1,9 @@
 class Video < ApplicationRecord
   validates :link, presence: true
 
+  before_save :embed_link
+
+  private
 
   def detect_host
     if self.link =~ /(youtube)/
@@ -21,6 +24,6 @@ class Video < ApplicationRecord
   end
 
   def embed_link
-    detect_host
+    self.embed = detect_host
   end
 end

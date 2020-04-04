@@ -1,19 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :landing, :home ]
+  skip_before_action :authenticate_user!, only: :landing
 
   def landing
-  end
-
-  def home
-    @posts = Post.all.order(created_at: :desc)
-    @shows = Show.get_shows
-    @layout = shows_empty(@shows)
-  end
-
-  private
-
-  def shows_empty(shows)
-    shows.empty? ? "justify-content-center" : "justify-content-start"
   end
 
 end
