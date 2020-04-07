@@ -1,21 +1,7 @@
 <div class="page-container">
   <div class="half-width-container w center grey-bg ps2">
     <% @objects.each do |contact| %>
-      <div class="d-flex align-items-center justify-content-between">
-        <p class="no-pm center"><%= mail_to contact.email, "<i class='fas fa-envelope-open-text no-d w'></i>".html_safe %> / <%= contact.name %> / <%= contact.job_description %>
-        </p>
-        <% if user_signed_in? && current_user.admin %>
-          <div class="d-flex align-items-center">
-            <button class="edit admin-btn" data-id="<%= contact.id %>" data-type="<%= contact.class.to_s.downcase %>">✎</button>
-            <%= link_to "✖", contact_path(contact), method: :delete, class: "admin-btn", remote: true %>
-          </div>
-        <% end %>
-      </div>
-      <div class="caption w">
-        <div id="<%= dom_id(contact, :inline) %>" class="ps2" style="display: none">
-          <%= render "contacts/inline_form", object: contact %>
-        </div>
-      </div>
+      <%= render "contacts/contact", contact: contact %>
     <% end %>
   </div>
 </div>

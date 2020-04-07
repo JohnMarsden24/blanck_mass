@@ -2,33 +2,11 @@
   <div class="d-flex <%= @layout %>">
     <div class="half-width-container">
       <% @posts.each do |post| %>
-        <div class="grey-bg ps2 mb4 w">
-          <% if post.pinned %>
-          <div class="d-flex">
-          <h4 class="caslon tac no-m pb2 letter-spacing-double flex-fill"><%= post.title %></h4>
-<i class="fas fa-thumbtack"></i>
-          </div>
-          <% else %>
-          <h4 class="caslon tac no-m pb2 letter-spacing-double"><%= post.title %></h4>
-          <% end %>
-          <div class="post-content">
-            <%= post.content.html_safe %>
-          </div>
-          <div class="d-flex align-items-center justify-content-between">
-            <p class="no-pm"><%= post.time %></p>
-            <% if user_signed_in? && current_user.admin %>
-              <div class="d-flex align-items-center">
-                <button class="edit admin-btn" data-id="<%= post.id %>" data-type="<%= post.class.to_s.downcase %>">✎</button>
-                <%= link_to "✖", post_path(post), method: :delete, class: "admin-btn", remote: true %>
-              </div>
-            <% end %>
-          </div>
-          <% if user_signed_in? && current_user.admin %>
-            <div id="<%= dom_id(post, :inline) %>" style="display: none">
-              <%= render "posts/inline_form", object: post %>
-            </div>
-          <% end %>
-        </div>
+        <% if post.pinned %>
+          <%= render "posts/pinned_post", post: post %>
+        <% else %>
+          <%= render "posts/post", post: post %>
+        <% end %>
       <% end %>
     </div>
     <% unless @shows.empty? %>

@@ -1,22 +1,7 @@
 <div class="page-container">
   <div class="grid-container">
     <% @objects.each do |audio| %>
-      <div>
-        <div class="iframe-container">
-          <%= audio.embed.html_safe %>
-        </div>
-        <% if user_signed_in? && current_user.admin %>
-          <div class="grey-bg w">
-            <div class="d-flex align-items-center justify-content-end">
-              <button class="edit admin-btn" data-id="<%= audio.id %>" data-type="<%= audio.class.to_s.downcase %>">✎</button>
-              <%= link_to "✖", audio_path(audio), method: :delete, class: "admin-btn", remote: true %>
-            </div>
-            <div id="<%= dom_id(audio, :inline) %>" class="ps2" style="display: none">
-              <%= render "audios/inline_form", object: audio %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+     <%= render "audios/audio", audio: audio %>
     <% end %>
   </div>
 </div>
