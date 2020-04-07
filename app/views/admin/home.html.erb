@@ -3,7 +3,6 @@
     <div class="form new-post grey-bg ps2">
       <h2>New post</h2>
       <%= simple_form_for @post do |f| %>
-      <div class="d-flex"></div>
         <%= f.input :title %>
         <%= f.input :content, input_html: { class: "post-form", rows:"20"} %>
         <%= f.input :pinned %>
