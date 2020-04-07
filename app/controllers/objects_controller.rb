@@ -36,6 +36,8 @@ class ObjectsController < ApplicationController
     @class_name.find(params[:id])
   end
 
+  # Method gets the Class name of the object which is used in further methods
+
   def get_class_name
     @class_name = controller_name.classify.underscore.capitalize.constantize
   end

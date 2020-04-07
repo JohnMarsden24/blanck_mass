@@ -1,3 +1,5 @@
+// tineMCE script, removes it first to work with turbolinks
+
 const postEditor = () => {
   tinymce.remove()
   tinymce.init({
