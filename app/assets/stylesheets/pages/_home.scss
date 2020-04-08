@@ -6,6 +6,34 @@
   max-height: 75vh;
 }
 
+.pagy-navbar {
+  .active {
+    a {
+      background-color: transparent !important;
+      color: $pink !important;
+      text-shadow: none;
+    }
+  }
+
+  .disabled {
+    a {
+      background-color: white !important;
+      color: black !important;
+    }
+  }
+
+  a {
+    color: white;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $pink;
+      background-color: transparent;
+    }
+  }
+}
+
 @media(max-width: 992px) {
   .shows-widget {
     display: none;
