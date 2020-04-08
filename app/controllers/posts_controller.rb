@@ -1,7 +1,8 @@
 class PostsController < ObjectsController
+  include Pagy::Backend
 
   def index
-    @posts = Post.all.reorder(pinned: :desc, created_at: :desc)
+    @pagy, @posts = pagy(Post.all.reorder(pinned: :desc, created_at: :desc), items: 5)
     @shows = Show.get_shows
     @layout = Show.shows_empty?(@shows)
   end
