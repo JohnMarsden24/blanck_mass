@@ -30,8 +30,13 @@
 }
 
 .fa-thumbtack {
-  transform: rotate(20deg);
+  transform: rotate(45deg);
   font-size: 2rem;
+  padding-right: 8px;
+}
+
+.break-word {
+  word-wrap: break-word;
 }
 
 

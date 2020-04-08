@@ -1,7 +1,5 @@
 <div class="page-container">
   <div class="half-width-container w center grey-bg ps2">
-    <% @objects.each do |contact| %>
-      <%= render "contacts/contact", contact: contact %>
-    <% end %>
+    <%= render @objects %>
   </div>
 </div>

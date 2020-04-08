@@ -1,7 +1,5 @@
 <div class="page-container">
   <div class="grid-container">
-    <% @objects.each do |audio| %>
-     <%= render "audios/audio", audio: audio %>
-    <% end %>
+    <%= render @objects %>
   </div>
 </div>

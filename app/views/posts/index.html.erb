@@ -1,20 +1,17 @@
 <div class="page-container">
   <div class="d-flex <%= @layout %>">
     <div class="half-width-container">
-      <% @posts.each do |post| %>
-        <% if post.pinned %>
-          <%= render "posts/pinned_post", post: post %>
-        <% else %>
-          <%= render "posts/post", post: post %>
-        <% end %>
-      <% end %>
+      <%= render @posts %>
+      <div class="pagy-navbar">
+        <%= pagy_bootstrap_nav(@pagy).html_safe %>
+      </div>
     </div>
     <% unless @shows.empty? %>
       <div class="shows-widget w overflow mr4 grey-bg">
         <h4 class="caslon tac no-m pb2 letter-spacing-double">UPCOMING SHOWS</h4>
         <% @shows.each_with_index do |show, index| %>
-          <div class="height64 d-flex justify-content-between align-items-center <%= show.border?(index, @shows.length) %>">
-            <p class="no-pm"><%= show.display_date.upcase %> / <%= show.location %></p>
+          <div class="min-height8 d-flex justify-content-between align-items-center <%= show.border?(index, @shows.length) %>">
+            <p class="no-m mr2 break-word"><%= show.display_date.upcase %> / <%= show.location %></p>
             <% unless show.link.empty? %>
               <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>
             <% end %>
