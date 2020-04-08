@@ -1,6 +1,6 @@
 <div class="<%= show.border?(index, @shows.length) %>">
   <div class="min-height8 d-flex justify-content-between align-items-center">
-    <p class="no-pm pr1 max-width-75"><%= show.display_date.upcase %> / <%= show.location %></p>
+    <p class="no-pm pr1 break-word max-width-75"><%= show.display_date.upcase %> / <%= show.location %></p>
     <div class="d-flex align-items-center">
       <% unless show.link.empty? %>
         <%= link_to 'TICKETS', show.link, target: :_blank, class: "bm-btn no-d"%>

@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-between">
-  <p class="no-pm center"><%= mail_to contact.email, "<i class='fas fa-envelope-open-text no-d w'></i>".html_safe %> <%= contact.job_description %> / <%= contact.name %>
+  <p class="no-pm"><%= mail_to contact.email, "<i class='fas fa-envelope-open-text no-d w'></i>".html_safe %> <%= contact.job_description %> / <%= contact.name %>
   </p>
   <% if user_signed_in? && current_user.admin %>
     <div class="d-flex align-items-center">
