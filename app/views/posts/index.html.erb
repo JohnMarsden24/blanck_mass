@@ -1,13 +1,7 @@
 <div class="page-container">
   <div class="d-flex <%= @layout %>">
     <div class="half-width-container">
-      <% @posts.each do |post| %>
-        <% if post.pinned %>
-          <%= render "posts/pinned_post", post: post %>
-        <% else %>
-          <%= render "posts/post", post: post %>
-        <% end %>
-      <% end %>
+      <%= render @posts %>
     </div>
     <% unless @shows.empty? %>
       <div class="shows-widget w overflow mr4 grey-bg">
