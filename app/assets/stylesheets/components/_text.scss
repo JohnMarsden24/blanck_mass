@@ -30,6 +30,9 @@
 }
 
 .fa-thumbtack {
+  position: absolute;
+  top: 0;
+  right: 0;
   transform: rotate(45deg);
   font-size: 2rem;
   padding-right: 8px;

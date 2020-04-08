@@ -6,6 +6,10 @@
   max-height: 75vh;
 }
 
+.pinned-title {
+  position: relative;
+}
+
 .pagy-navbar {
   .active {
     a {
@@ -17,8 +21,8 @@
 
   .disabled {
     a {
-      background-color: white !important;
-      color: black !important;
+      background-color: transparent !important;
+      color: white !important;
     }
   }
 
