@@ -1,5 +1,5 @@
-<div class="<%= contact.border?(index, @objects.length) %> mtb1">
-  <div class="d-flex align-items-center justify-content-between">
+<div class="<%= contact.border?(index, @objects.length) %>">
+  <div class="d-flex align-items-center justify-content-between mtb1">
     <p class="no-pm"><%= mail_to contact.email, "<i class='fas fa-envelope-open-text no-d w'></i>".html_safe %> <%= contact.job_description %> / <%= contact.name %>
     </p>
     <% if user_signed_in? && current_user.admin %>
