@@ -3,7 +3,7 @@
     <%= video.embed.html_safe %>
   </div>
   <% if video.caption? || (user_signed_in? && current_user.admin) %>
-    <div class="grey-bg w ptb1">
+    <div class="grey-bg w">
       <div class="d-flex justify-content-between align-items-center ps1">
         <p class="center"><%= video.caption %></p>
         <% if user_signed_in? && current_user.admin %>

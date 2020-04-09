@@ -1,13 +1,24 @@
 .shows-widget {
   width: 30%;
-  padding: 16px;
   position: fixed;
   right: 0;
   max-height: 75vh;
 }
 
+
 .pinned-title {
   position: relative;
+}
+
+.socials {
+  a {
+    font-size: 2rem;
+  }
+
+}
+
+.socials-posts {
+  display: none;
 }
 
 .pagy-navbar {
@@ -42,4 +53,12 @@
   .shows-widget {
     display: none;
   }
+
+  .socials-posts {
+  display: block;
+  }
+
+  .socials-shows {
+  display: none;
+}
 }

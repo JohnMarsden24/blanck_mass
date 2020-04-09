@@ -21,6 +21,10 @@
   padding-right: 8px;
 }
 
+.pr2 {
+  padding-right: 16px;
+}
+
 .ps1 {
   padding: 8px;
 }
@@ -42,6 +46,10 @@
 
 // m = margin / s = square / r = recentangle / t = top / r = right / b = bottom / l = left / 1-4 in 8px intervals
 
+.mb1 {
+  margin-bottom: 8px;
+}
+
 .mb4 {
   margin-bottom: 32px;
 }
@@ -52,6 +60,11 @@
 
 .mr4 {
   margin-right: 64px;
+}
+
+.mtb1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 // SPACING, WIDTH, HEIGHT
