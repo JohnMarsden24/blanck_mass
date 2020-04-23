@@ -11,7 +11,7 @@
     <% if user_signed_in? && current_user.admin %>
       <div class="d-flex align-items-center">
         <button class="edit admin-btn" data-id="<%= post.id %>" data-type="<%= post.class.to_s.downcase %>">✎</button>
-        <%= link_to "✖", post_path(post), method: :delete, class: "admin-btn", remote: true %>
+        <%= link_to "✖", post_path(post), method: :delete, class: "admin-btn", remote: true, data: {confirm: "Are you sure you want to delete?"} %>
       </div>
     <% end %>
   </div>
