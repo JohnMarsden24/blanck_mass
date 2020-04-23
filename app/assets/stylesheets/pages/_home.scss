@@ -50,15 +50,11 @@
 }
 
 @media(max-width: 992px) {
-  .shows-widget {
+  .shows-widget, .socials-shows, .socials-posts-empty-shows {
     display: none;
   }
 
   .socials-posts {
   display: block;
   }
-
-  .socials-shows {
-  display: none;
-}
 }

@@ -7,7 +7,7 @@
       <% end %>
       <% if user_signed_in? && current_user.admin %>
         <button class="edit admin-btn" data-id="<%= show.id %>" data-type="<%= show.class.to_s.downcase %>">✎</button>
-        <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true %>
+        <%= link_to "✖", show_path(show), method: :delete, class: "admin-btn", remote: true, data: {confirm: "Are you sure you want to delete?"} %>
       <% end %>
     </div>
   </div>

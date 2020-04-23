@@ -1,5 +1,5 @@
 meta_product_name: "Blanck Mass"
-meta_title: "Blanck Mass - Official website of Blanck Mass"
-meta_description: "Blanck Mass - Official website of Blanck Mass"
-meta_image: "full_logo_shadow.png" # should exist in `app/assets/images/`
+meta_title: "Blanck Mass - Official website"
+meta_description: "Blanck Mass - Official website"
+meta_image: "facebook_link.png" # should exist in `app/assets/images/`
 twitter_account: "@BlanckMass"   # required for Twitter Cards

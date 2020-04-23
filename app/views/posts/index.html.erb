@@ -1,6 +1,11 @@
 <div class="page-container">
   <div class="d-flex <%= @layout %>">
     <div class="half-width-container">
+      <% if @shows.empty? %>
+       <div class="socials-posts-empty-shows">
+        <%= render "shared/socials" %>
+      </div>
+      <% end %>
       <div class="socials-posts">
         <%= render "shared/socials" %>
       </div>
