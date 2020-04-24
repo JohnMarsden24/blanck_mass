@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   # if a new pinned post is made or updated it will go through all records that do not match the current ID and set pinned to false
 
   def ensure_only_one_pinned_post
-    Post.where("id != ?", id).update_all(pinned: false)
+    Post.where("id != ?", id).update_all(pinned: false) if self.pinned
   end
 
 end
