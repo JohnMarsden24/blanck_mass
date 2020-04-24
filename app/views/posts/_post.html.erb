@@ -2,7 +2,7 @@
 <%= render "posts/pinned_post", post: post %>
 <% else %>
 <div class="grey-bg ps2 mb4 w">
-  <h4 class="caslon tac no-m pb2 letter-spacing-double"><%= post.title %></h4>
+  <h4 class="caslon tac no-m pb2 letter-spacing-double post-title"><%= post.title %></h4>
   <div class="post-content">
     <%= post.content.html_safe %>
   </div>

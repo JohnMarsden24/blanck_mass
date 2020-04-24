@@ -16,3 +16,12 @@
   }
 }
 
+@media(max-width: 576px) {
+  .page-container {
+    padding: 16px 16px;
+  }
+
+  .post-title {
+    font-size: 1.2rem;
+  }
+}
