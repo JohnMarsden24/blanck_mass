@@ -1,5 +1,5 @@
 .nav {
-  background: url("navbar");
+  background: url("navbar.png");
   background-size: cover;
   background-position: bottom;
   width: 100%;
@@ -10,7 +10,7 @@
 }
 
 .logo {
-  background: url("navbar_logo1");
+  background: url("navbar_logo1.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@
   position: absolute;
 
   &:hover {
-    background: url("navbar_logo2");
+    background: url("navbar_logo2.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
