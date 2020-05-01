@@ -4,7 +4,4 @@ class PagesController < ApplicationController
   def landing
   end
 
-  def jonny
-  end
-
 end
