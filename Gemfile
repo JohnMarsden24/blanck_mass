@@ -36,6 +36,7 @@ gem 'simple_form'
 
 gem 'figaro'
 gem 'pagy'
+gem "rack-timeout"
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
